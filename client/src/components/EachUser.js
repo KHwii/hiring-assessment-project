@@ -18,19 +18,27 @@ export default class EachUser extends Component {
 
     fetch(`https://koreanjson.com/todos?userId=${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(json =>
-        this.setState({ todos: json.filter(el => el.completed === true) })
-      );
+      .then(json => this.setState({ todos: json }));
   }
 
   render() {
     return (
       <div>
         <div>
-          <Link to={`/users/${this.props.match.params.id}`}>유저 프로필</Link>
+          <Link
+            to={`/users/${this.props.match.params.id}`}
+            className="select-btn"
+          >
+            유저 프로필
+          </Link>
           <span>
-            <Link to={`/users/${this.props.match.params.id}/todos`}>투두</Link>
-            <span>{this.state.todos ? this.state.todos.length : null}</span>
+            <Link
+              to={`/users/${this.props.match.params.id}/todos`}
+              className="select-btn"
+            >
+              투두
+              <span>{this.state.todos ? this.state.todos.length : null}</span>
+            </Link>
           </span>
         </div>
         <div>

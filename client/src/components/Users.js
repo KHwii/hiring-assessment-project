@@ -14,20 +14,31 @@ export default class Users extends Component {
       .then(json => this.setState({ data: json }));
   }
 
-  selectUser(event) {
-    this.setState({ selectedId: event });
+  selectUser() {
+    let selectedUser = document.body.querySelector("#user-select").value;
+    this.setState({ selectedId: selectedUser });
   }
 
   render() {
     return (
       <div>
         <div>유저 리스트</div>
-        {this.state.data
-          ? this.state.data.map(el => (
-              <span onClick={() => this.selectUser(el.id)}>{el.name}</span>
-            ))
-          : null}
-        <Link to={`/users/${this.state.selectedId}`}>선택</Link>
+        <select
+          id="user-select"
+          size={`${this.state.data ? this.state.data.length : null}`}
+          onChange={() => this.selectUser()}
+        >
+          {this.state.data
+            ? this.state.data.map(el => (
+                <option key={el.id} value={el.id}>
+                  {el.name}
+                </option>
+              ))
+            : null}
+        </select>
+        <Link to={`/users/${this.state.selectedId}`} className="select-btn">
+          선택
+        </Link>
         <Link to="/" className="select-btn">
           뒤로 가기
         </Link>
