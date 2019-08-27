@@ -10,11 +10,11 @@ import UserTodos from "./components/UserTodos";
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Header} />
-      <Route path="/posts" exact component={Board} />
-      <Route path="/users" exact component={Users} />
-      <Route path="/users/:id" exact component={EachUser} />
-      <Route path="/users/:id/todos" exact component={UserTodos} />
+      <Route exact path="/" component={Header} />
+      <Route exact path="/posts" component={Board} />
+      <Route exact path="/users" component={Users} />
+      <Route exact path="/users/:id" component={EachUser} />
+      <Route exact path="/users/:id/todos" component={UserTodos} />
     </Router>
   );
 }

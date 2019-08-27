@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 export default class Users extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedId: null };
+    this.state = { selectedId: "" };
     this.selectUser = this.selectUser.bind(this);
   }
 
