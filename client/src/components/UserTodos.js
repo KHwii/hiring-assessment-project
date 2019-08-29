@@ -9,27 +9,27 @@ export default class UserTodos extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://koreanjson.com/todos?userId=${this.props.match.params.id}`)
+    fetch(`http://localhost:8080/todos?userId=${this.props.match.params.id}`)
       .then(res => res.json())
       .then(json => this.setState({ todos: json }));
   }
 
   async handleSelect() {
     let selectTagVal = document.body.querySelector("#select-todo").value;
-    let booleanVal = selectTagVal === "true";
+    // let booleanVal = selectTagVal === "true";
     if (selectTagVal === "true" || selectTagVal === "false") {
       await fetch(
-        `https://koreanjson.com/todos?userId=${this.props.match.params.id}`
+        `http://localhost:8080/todos?userId=${this.props.match.params.id}`
       )
         .then(res => res.json())
         .then(json =>
           this.setState({
-            todos: json.filter(el => el.completed === booleanVal)
+            todos: json.filter(el => el.completed === selectTagVal)
           })
         );
     } else {
       await fetch(
-        `https://koreanjson.com/todos?userId=${this.props.match.params.id}`
+        `http://localhost:8080/todos?userId=${this.props.match.params.id}`
       )
         .then(res => res.json())
         .then(json =>

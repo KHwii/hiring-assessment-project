@@ -9,7 +9,7 @@ export default class Users extends Component {
   }
 
   componentDidMount() {
-    fetch("https://koreanjson.com/users")
+    fetch("http://localhost:8080/users")
       .then(res => res.json())
       .then(json => this.setState({ data: json }));
   }

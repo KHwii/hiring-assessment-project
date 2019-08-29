@@ -8,15 +8,15 @@ export default class EachUser extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://koreanjson.com/users/${this.props.match.params.id}`)
+    fetch(`http://localhost:8080/users/${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(json => this.setState({ data: json }));
+      .then(json => this.setState({ data: json[0] }));
 
     fetch("https://randomuser.me/api/")
       .then(res => res.json())
       .then(json => this.setState({ src: json.results[0].picture.medium }));
 
-    fetch(`https://koreanjson.com/todos?userId=${this.props.match.params.id}`)
+    fetch(`http://localhost:8080/todos?userId=${this.props.match.params.id}`)
       .then(res => res.json())
       .then(json => this.setState({ todos: json }));
   }
