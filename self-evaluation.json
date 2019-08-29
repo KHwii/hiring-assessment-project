@@ -3,14 +3,14 @@
     "basic": {
       "json": 3,
       "setting": 2,
-      "design": 0,
+      "design": 2,
       "readme": 2,
       "render_01": 2,
       "render_02": 2,
       "router": 2,
       "fetch": 3,
       "cond_render": 1,
-      "css": 0,
+      "css": 1,
       "git": 2
     },
     "advanced": {
@@ -27,20 +27,20 @@
   },
   "server": {
     "basic": {
-      "json": 0,
-      "setting": 0,
-      "run": 0,
-      "readme": 0,
-      "secret": 0,
-      "controller": 0,
-      "router": 0,
-      "model": 0,
+      "json": 2,
+      "setting": 2,
+      "run": 2,
+      "readme": 1,
+      "secret": 1,
+      "controller": 2,
+      "router": 2,
+      "model": 2,
       "docs": 0,
       "error_server": 0,
-      "data": 0,
-      "db": 0,
-      "env": 0,
-      "git": 0
+      "data": 2,
+      "db": 2,
+      "env": 1,
+      "git": 2
     },
     "advanced": {
       "middleware": 0,
